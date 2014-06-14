@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Sortify JS</title>
+</head>
+<body>
+  
+  <h1>My Homies</h1>
+  <ul class="fav-minds">
+    <li>Nicola Tesla</li>
+    <li>Jon Von Neumann</li>
+    <li>Albert Einstein</li>
+    <li>Isaac Newton</li>
+    <li>Stephen Hawkings</li>
+  </ul>
+
+  <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+  <script src="../src/sortify.jquery.js"></script>
+
+  <script type="text/javascript">
+
+    $('.fav-minds').sortify();
+
+    $.sortify.add("Archimedes");
+
+    $.sortify.add("Socrates");
+
+    $.sortify.add("Jack London");
+  </script>
+</body>
+</html>
