@@ -23,7 +23,7 @@
 
     <div class="small-6 columns">
       <h3>With Table</h3>
-      <table class="fav-minds">
+      <table class="fav-minds-table">
         <thead>
           <tr>
             <th>Name</th>
@@ -55,7 +55,7 @@
   <script src="../src/sortify.jquery.js"></script>
 
   <script type="text/javascript">
-
+  
     $('.fav-minds').sortify();
 
     $.sortify.add("Archimedes");
@@ -64,7 +64,8 @@
 
     $.sortify.add("Jack London");
 
-    $('.fav-minds')
+    $('.fav-minds-table').sortify();
+
   </script>
 </body>
 </html>

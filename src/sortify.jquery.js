@@ -13,25 +13,30 @@
   var list,
       sortOption,
       listElements,
-      listItems = [];
+      listItems = [],
+      listType;
 
   function init(settings){
 
-    list = settings.container;
     sortOption = settings.sortOption;
-    listElements =[],
-    listItems = [];
-      
+    
+    listType = settings.container.tagName;
 
-    if(list.tagName === 'UL'){
+    if(listType === 'UL'){
+      //listElements = $(list).find('li');
+      list = settings.container;
+
       listElements = list.getElementsByTagName('li');
-    }else if(list.tagName === 'TABLE'){
+    }else if(listType === 'TABLE'){
+      //listElements = $(list).find("tbody tr");
+      list = settings.container.getElementsByTagName('tbody')[0];
+
       listElements = list.getElementsByTagName('tr');
     }else{
       console.log('Error, sortify only works on tables or unordered lists');
       return;
     }
-
+    console.log(list);
     sortify();
   }
 
@@ -61,7 +66,7 @@
       
       if(list.tagName === 'UL'){
         item = '<li>' + listItems[i] + '</li>';
-      }else if(list.tagName === 'TABLE'){
+      }else if(listType === 'TABLE'){
         item = '<tr>' + listItems[i] + '</tr>';
       }
 
@@ -73,15 +78,13 @@
     //console.log(lis);
     for(var i = 0, l = listElements.length; i < l; i++){
       listItems[i] = listElements[i].innerHTML;
-      if(list.tagName === 'TABLE'){
-        console.log(listItems[i]);
-      }
     }
   }
 
   function clearElements(){
-
+    
     while(list.firstChild){
+      console.log(list.firstChild);
       list.removeChild(list.firstChild);
     }
   }
