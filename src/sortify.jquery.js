@@ -16,16 +16,27 @@
       listItems = [];
 
   function init(settings){
-    
+
     list = settings.container;
     sortOption = settings.sortOption;
-    listElements =list.getElementsByTagName("li"),
+    listElements =[],
     listItems = [];
-    
+      
+
+    if(list.tagName === 'UL'){
+      listElements = list.getElementsByTagName('li');
+    }else if(list.tagName === 'TABLE'){
+      listElements = list.getElementsByTagName('tr');
+    }else{
+      console.log('Error, sortify only works on tables or unordered lists');
+      return;
+    }
+
     sortify();
   }
 
   function sortify(){
+
     getItems();
 
     clearElements();
@@ -47,10 +58,14 @@
     var item;
 
     for(i = 0, l = listItems.length; i < l; i++){
-      item = document.createElement("li");
-      item.innerHTML = listItems[i];
+      
+      if(list.tagName === 'UL'){
+        item = '<li>' + listItems[i] + '</li>';
+      }else if(list.tagName === 'TABLE'){
+        item = '<tr>' + listItems[i] + '</tr>';
+      }
 
-      list.appendChild(item);
+      $(list).append(item);
     }
   }
 
@@ -58,6 +73,9 @@
     //console.log(lis);
     for(var i = 0, l = listElements.length; i < l; i++){
       listItems[i] = listElements[i].innerHTML;
+      if(list.tagName === 'TABLE'){
+        console.log(listItems[i]);
+      }
     }
   }
 

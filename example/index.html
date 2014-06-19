@@ -6,8 +6,12 @@
   <link href="http://cdnjs.cloudflare.com/ajax/libs/foundation/5.2.3/css/foundation.min.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
+  <h1 align="center">Great minds</h1>
   <div class="row">
-    <div class="small-6 larget-centered columns">
+    <div class="small-6 columns">
+      
+      <h3>With unordered list</h3>
+
       <ul class="fav-minds">
         <li>Nicola Tesla</li>
         <li>Jon Von Neumann</li>
@@ -16,8 +20,36 @@
         <li>Stephen Hawkings</li>
       </ul>
     </div>
+
+    <div class="small-6 columns">
+      <h3>With Table</h3>
+      <table class="fav-minds">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Country</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Nicola Tesla</td><td>Croatia / United States</td>
+          </tr>
+          <tr>
+            <td>Jon Von Neumann</td><td>Hungary / United States</td>
+          </tr>
+          <tr>
+            <td>Albert Einstein</td><td>German / United States</td>
+          </tr>
+          <tr>
+            <td>Isaac Newton</td><td>England</td>
+          </tr>
+          <tr>
+            <td>Stephen Hawkings</td><td>United Kingdom</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
-  <h1>My Homies</h1>
 
   <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
   <script src="../src/sortify.jquery.js"></script>
@@ -31,6 +63,8 @@
     $.sortify.add("Socrates");
 
     $.sortify.add("Jack London");
+
+    $('.fav-minds')
   </script>
 </body>
 </html>
