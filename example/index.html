@@ -6,8 +6,11 @@
   <link href="http://cdnjs.cloudflare.com/ajax/libs/foundation/5.2.3/css/foundation.min.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
-  <h1 align="center">Great minds</h1>
+
   <div class="row">
+    
+    <h2>Great Minds</h2>
+    <p><em>Ordered alphabetically</em></p>
     <div class="small-6 columns">
       
       <h3>With unordered list</h3>
@@ -22,8 +25,8 @@
     </div>
 
     <div class="small-6 columns">
-      <h3>With Table</h3>
-      <table class="fav-minds-table">
+      <h3>With a table</h3>
+      <table class="fav-minds">
         <thead>
           <tr>
             <th>Name</th>
@@ -51,6 +54,49 @@
     </div>
   </div>
 
+  <hr />
+  
+  <div class="row">
+    
+    <h2>Great Events</h2>
+    <p><em>Ordered by date</em></p>
+    <div class="small-6 columns">
+      
+      <h3>With unordered list</h3>
+
+      <ul class="fav-minds">
+        <li>Nicola Tesla</li>
+        <li>Jon Von Neumann</li>
+        <li>Albert Einstein</li>
+        <li>Isaac Newton</li>
+        <li>Stephen Hawkings</li>
+      </ul>
+    </div>
+
+    <div class="small-6 columns">
+      <h3>With Table</h3>
+      <table class="historical-events">
+        <thead>
+          <tr>
+            <th>Event</th>
+            <th>Date</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Jamestown settlement</td><td>May 14th 1607</td>
+          </tr>
+          <tr>
+            <td>Barrack Obama inauguration</td><td>January 20th 2009</td>
+          </tr>
+          <tr>
+            <td>Einstein's special relativity published</td><td>September 30th 1905</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
   <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
   <script src="../src/sortify.jquery.js"></script>
 
@@ -58,13 +104,11 @@
   
     $('.fav-minds').sortify();
 
-    $.sortify.add("Archimedes");
-
-    $.sortify.add("Socrates");
-
-    $.sortify.add("Jack London");
-
-    $('.fav-minds-table').sortify();
+    $('.historical-events').sortify({
+      sortByColumn: 'date',
+      sortByType: 'date',
+      sortOrder: 'desc'
+    });
 
   </script>
 </body>

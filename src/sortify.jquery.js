@@ -33,7 +33,7 @@
 
       listElements = list.getElementsByTagName('tr');
     }else{
-      console.log('Error, sortify only works on tables or unordered lists');
+      console.log('Error, sortify only works on tables and unordered lists');
       return;
     }
     console.log(list);
