@@ -5,7 +5,7 @@
  *
  * @author micahblu
  * @license GNU General Public License, version 3 (GPL-3.0)
- * @version 0.1.0
+ * @version 0.0.1
  */
 
 (function($){
@@ -18,7 +18,7 @@
 
   function init(settings){
 
-    sortOption = settings.sortOption;
+    sortBy = settings.sortBy;
     
     listType = settings.container.tagName;
 
@@ -33,20 +33,19 @@
 
       listElements = list.getElementsByTagName('tr');
     }else{
-      console.log('Error, sortify only works on tables and unordered lists');
+      console.log('Error, sortify only works on tables and  unordered lists');
       return;
     }
-    console.log(list);
-    sortify();
+    sortify(sortBy);
   }
 
-  function sortify(){
+  function sortify(sortBy){
 
     getItems();
 
     clearElements();
 
-    sortItems();
+    sortItems(sortBy);
 
     addItems();
   }
@@ -89,11 +88,20 @@
     }
   }
 
-  function sortItems() {
+  function sortItems(sortBy) {
 
     listItems.sort();
 
-    if(sortOption === 'descending'){
+    switch{
+      case 'date':
+        break
+
+      case 'alphabetically':
+      case 'alpha'
+        break;
+    }
+
+    if(sortBy === 'descending'){
       listItems.reverse();
     }
   }
