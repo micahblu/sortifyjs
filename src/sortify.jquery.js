@@ -91,8 +91,8 @@
   function sortItems(sortBy) {
 
     listItems.sort();
-
-    switch{
+    /*
+    switch(){
       case 'date':
         break
 
@@ -100,7 +100,7 @@
       case 'alpha'
         break;
     }
-
+    */
     if(sortBy === 'descending'){
       listItems.reverse();
     }
